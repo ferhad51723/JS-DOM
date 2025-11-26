@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    height: 100vh;
+}
+
 svg{
     display: none;
     height: 24px;
@@ -27,7 +31,14 @@ svg{
 }
 
 .navbar__list a{
+    display: block;
     color: white;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+}
+
+.navbar__list a:hover{
+    background-color: hsl(192, 91%, 45%);
 }
 
 .navbar__list--open{
