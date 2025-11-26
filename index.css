@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+svg{
+    display: none;
+    height: 24px;
+    width: 24px;
+}
+
+.city{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checked{
+    color: blue;
+}
+
+.checked  svg{
+    display: block;
+    fill: yellow;
+}
+
+.navbar__list{
+    display: none;
+}
+
+.navbar__list a{
+    color: white;
+}
+
+.navbar__list--open{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
