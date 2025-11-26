@@ -1,26 +1,78 @@
-const formButton = document.querySelector('.form__button');
-const formDiv = document.getElementsByClassName('form__div')[0];
+const cardsSection = document.querySelector(".cards-section");
+const addButton = document.querySelector(".add-button");
+const removeButton = document.querySelector(".remove-button");
+const resetButton = document.querySelector(".reset-button");
+const count = document.querySelector(".count");
 
-formButton.addEventListener('click',(event) => {
-    event.preventDefault();
-    const colorInput__Value = document.getElementById('color-input').value;
-    formDiv.style.background = colorInput__Value;
-    const widthInput__Value = document.getElementById('width-input').value;
-    formDiv.style.width = widthInput__Value + 'px';
+const cards_info = [
+  {
+    id: 4,
+    companyName: "Tokyo Traders",
+    contactName: "Yoshi Nagase",
+    contactTitle: "Marketing Manager",
+  },
+  {
+    id: 5,
+    companyName: "Cooperativa de Quesos 'Las Cabras'",
+    contactName: "Antonio del Valle Saavedra",
+    contactTitle: "Export Administrator",
+  },
+  {
+    id: 6,
+    companyName: "Mayumi's",
+    contactName: "Mayumi Ohno",
+    contactTitle: "Marketing Representative",
+  },
+  {
+    id: 7,
+    companyName: "Pavlova Ltd.",
+    contactName: "Ian Devling",
+    contactTitle: "Marketing Manager",
+  },
+  {
+    id: 8,
+    companyName: "Specialty Biscuits Ltd.",
+    contactName: "Peter Wilson",
+    contactTitle: "Sales Representative",
+  },
+  {
+    id: 9,
+    companyName: "PB Knäckebröd AB",
+    contactName: "Lars Peterson",
+    contactTitle: "Sales Agent",
+  },
+  {
+    id: 10,
+    companyName: "Refrescos Americanas LTDA",
+    contactName: "Carlos Diaz",
+    contactTitle: "Marketing Manager",
+  },
+];
+
+cards_info.forEach((element) => {
+  const card = document.createElement("article");
+  card.classList.add("card");
+  card.setAttribute("data-id", element.id);
+  card.innerHTML = `
+        <h2 class="card__name">${element.contactName}</h2>
+        <p class="card__title">${element.contactTitle}</p>
+        <p class="card__company">${element.companyName}</p>
+    `;
+  cardsSection.appendChild(card);
+});
+
+addButton.addEventListener("click", (event) => {
+    let valueAsNumber = Number(count.textContent);
+    valueAsNumber++;
+    count.textContent = valueAsNumber;
+});
+
+removeButton.addEventListener("click",(event) => {
+    let valueAsNumber = Number(count.textContent);
+    valueAsNumber--;
+    count.textContent = valueAsNumber;
 })
 
-const cityList = document.querySelector('.city-list');
-
-cityList.addEventListener('click',(event) => {
-
-    if(event.target.classList.contains('city')){
-        event.target.classList.toggle("checked")
-    }
-})
-
-const navbarButton = document.querySelector('.navbar__button');
-
-navbarButton.addEventListener('click',(event) => {
-    const navbarList = document.querySelector('.navbar__list')
-    navbarList.classList.toggle('navbar__list--open')
+resetButton.addEventListener("click",(event) => {
+    count.innerHTML = '0';
 })
