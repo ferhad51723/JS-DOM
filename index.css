@@ -1,48 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('reset.css');
+
+.hidden{
+    display: none;
+}
 
 body{
-    height: 100vh;
+    background-color: #171717;
 }
 
-svg{
-    display: none;
-    height: 24px;
-    width: 24px;
+main{
+    padding-block: 3.75rem;
+    max-width: 45rem;
+    margin: auto;
 }
 
-.city{
-    display: flex;
-    justify-content: space-between;
-}
-
-.checked{
-    color: blue;
-}
-
-.checked  svg{
-    display: block;
-    fill: yellow;
-}
-
-.navbar__list{
-    display: none;
-}
-
-.navbar__list a{
-    display: block;
-    color: white;
-    padding-inline: 2rem;
-    padding-block: 1rem;
-}
-
-.navbar__list a:hover{
-    background-color: hsl(192, 91%, 45%);
-}
-
-.navbar__list--open{
-    display: flex;
-    flex-direction: column;
+.cards-section{
+    display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+}
+
+.card{
+    width: 100%;
+    padding: 1rem;
+    background-color: #262626;
+    border-radius: 8px;
+}
+
+.card__name{
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding-block: .25rem;
+}
+
+.card__title{
+    color: hsl(0, 0%, 90%);
+    font-size: 1rem;
+    padding-block: .25rem;
+}
+
+.card__company{
+    color: hsl(0, 0%, 80%);
+    font-size: .875rem;
+    padding-block: .25rem;
+}
+
+.count{
+    color: white;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+button{
+    background-color: #404040;
+    display: flex;
+    gap: 1rem;
+    border-radius: 999px;
+    padding: .25rem;
+
+    svg{
+        fill: yellow;
+    }
 }
