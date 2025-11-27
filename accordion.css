@@ -1,0 +1,29 @@
+@import url('reset.css');
+
+.hidden{
+    display: none;
+}
+
+body{
+    background-color: #171717;
+}
+
+main{
+    padding-block: 3.75rem;
+    max-width: 45rem;
+    margin: auto;
+}
+
+.accordion{
+    width: 100%;
+}
+
+button{
+    background-color: #404040;
+    display: flex;
+    gap: 1rem;
+    padding: .25rem;
+    svg{
+        fill: yellow;
+    }
+}
